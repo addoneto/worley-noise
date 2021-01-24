@@ -1,4 +1,5 @@
-let POINTS_NUM = 50;
+const POINTS_NUM = 50;
+const DistToColorThreshold = 4;
 
 window.onload = function () {
     const canvas = document.getElementsByTagName('canvas')[0];
@@ -40,7 +41,7 @@ window.onload = function () {
                 }
             }
 
-            let finalColor = map(closestDist, 0, canvas.width / 4, 255, 0);
+            let finalColor = map(closestDist, 0, canvas.width / DistToColorThreshold, 255, 0);
 
             pixels[pixelIndex    ] = finalColor;
             pixels[pixelIndex + 1] = finalColor;
